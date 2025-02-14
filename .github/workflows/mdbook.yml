@@ -37,8 +37,10 @@ jobs:
         with:
           mdbook-version: 0.4.44
       - run: |
-          # Add mdbook-image-size extension.
-          wget -qO- https://github.com/nicholasphair/mdbook-image-size/releases/download/v.0.2.1/mdbook-image-size-v.0.2.1-x86_64-unknown-linux-musl.tar.gz | tar xz -C /usr/local/bin
+          # Add mdbook-toc, mdbook-mermaid, and mdbook-image-size preprocessors.
+          wget -qO- https://github.com/badboy/mdbook-toc/releases/download/0.14.2/mdbook-toc-0.14.2-x86_64-unknown-linux-gnu.tar.gz | tar xz -C /usr/local/bin
+          wget -qO- https://github.com/badboy/mdbook-mermaid/releases/download/v0.14.1/mdbook-mermaid-v0.14.1-x86_64-unknown-linux-gnu.tar.gz | tar xz -C /usr/local/bin
+          wget -qO- https://github.com/nicholasphair/mdbook-image-size/releases/download/v.0.2.1/mdbook-image-size-v.0.2.1-x86_64-unknown-linux-gnu.tar.gz | tar xz -C /usr/local/bin
           mdbook build
       - name: Setup Pages
         id: pages
